@@ -3,7 +3,6 @@ services:
   - type: web
     name: contact-manager-api
     env: python
-    plan: free
     buildCommand: "cd backend && pip install -r requirements.txt && python render_init_db.py"
     startCommand: "cd backend && python app.py"
     envVars:
@@ -28,7 +27,6 @@ services:
   - type: web
     name: contact-manager-frontend
     env: static
-    plan: free
     buildCommand: "npm install && npm run build"
     staticPublishPath: build
     envVars:
